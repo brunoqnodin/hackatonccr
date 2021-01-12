@@ -3,10 +3,10 @@ import 'package:prisma/Contas.dart';
 import 'package:prisma/Pages/Cadastro.dart';
 import 'package:prisma/Pages/Cadastro1.dart';
 import 'package:prisma/Pages/Contas1.dart';
+import 'package:prisma/Pages/Dashboard.dart';
 import 'package:prisma/Pages/LoginPage.dart';
 import 'package:prisma/Pages/CadLogin.dart';
 import 'package:prisma/Pages/Proposta1.dart';
-import 'package:prisma/Pages/Propostas.dart';
 import 'package:prisma/Pages/ResetPassword.dart';
 import 'package:prisma/Pages/Home.dart';
 import 'package:prisma/Pages/Splash.dart';
@@ -36,7 +36,7 @@ class RouteGenerator{
       case "/proposta1":
         return MaterialPageRoute(builder: (_) => Proposta1());
       case "/proposta":
-        return MaterialPageRoute(builder: (_) => Propostas());
+        return MaterialPageRoute(builder: (_) => Dashboard());
       case "/home":
         return MaterialPageRoute(builder: (_) => Home());
       case "/splash":

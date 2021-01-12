@@ -47,6 +47,7 @@ dependencies:
   curl: ^1.0.0
   splashscreen: ^1.3.5
   flare_dart: ^2.3.4
+  percent_indicator: ^2.1.9
 
 dev_dependencies:
   flutter_test:
@@ -70,7 +71,9 @@ flutter:
   assets:
     - assets/backlogin1.png
     - assets/logoopenminer.png
+    - assets/logoopenminer2.png
     - assets/google_logo.png
+    - assets/image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

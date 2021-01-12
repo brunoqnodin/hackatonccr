@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:prisma/Contas.dart';
 import 'package:prisma/Pages/Cadastro.dart';
 import 'package:prisma/Pages/Extratos.dart';
-import 'package:prisma/Pages/Propostas.dart';
+import 'package:prisma/Pages/Dashboard.dart';
 import 'package:prisma/Pages/Solicita.dart';
 import 'package:prisma/Pages/ui/clipper.dart';
 import 'package:prisma/Pages/ui/draweropen.dart';
@@ -51,17 +51,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> paginas = [
-      Propostas(),
+      Dashboard(),
       Solicita(),
       Extratos(),
       Contas()
     ];
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white70),
-        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
         title: Image.asset("assets/logoopenminer2.png", height: 40,),
-        backgroundColor: Color(0xFF2A5C5B),
+        backgroundColor: Colors.white,
+        elevation: 15,
         centerTitle: true,
         actions: <Widget>[
           PopupMenuButton<String>(
@@ -78,26 +78,13 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            ClipPath(
-              clipper: WaveClipperTwo(),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF2A5C5B),
-                ),
-                height: 60,
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              child: paginas[_indiceAtual],
-            ),
-          ],
+        child: Container(
+          width: double.infinity,
+          child: paginas[_indiceAtual],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF2A5C5B),
+        backgroundColor: Colors.white,
         currentIndex: _indiceAtual,
         onTap: (indice){
           setState(() {
@@ -105,23 +92,23 @@ class _HomeState extends State<Home> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        fixedColor: Colors.white,
+        fixedColor: Color(0xFF5F5775),
         unselectedItemColor: Colors.black54,
         items: [
           BottomNavigationBarItem(
-              label: "Crédito",
+              label: "Dashboard",
               icon: Icon(Icons.insert_drive_file)
           ),
           BottomNavigationBarItem(
-              label: "Contas",
+              label: "Oportunidades",
               icon: Icon(Icons.home)
           ),
           BottomNavigationBarItem(
-              label: "Extratos",
+              label: "Minhas Trilhas",
               icon: Icon(Icons.insert_chart)
           ),
           BottomNavigationBarItem(
-             label: "Cadastrar conta",
+             label: "Carteira",
               icon: Icon(Icons.account_circle)
           ),
         ],

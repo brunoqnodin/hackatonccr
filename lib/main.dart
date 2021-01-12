@@ -12,7 +12,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MaterialApp(
-    theme: ThemeData(primaryColor: Colors.white),
+    theme: ThemeData(primaryColor: Colors.black),
     debugShowCheckedModeBanner: false,
     initialRoute: "/",
     onGenerateRoute: RouteGenerator.generateRoute,
