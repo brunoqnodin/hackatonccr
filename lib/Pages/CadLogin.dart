@@ -82,272 +82,267 @@ class _CadLoginState extends State<CadLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF2A5C5B),
-        elevation: 0,
-      ),
       body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            ClipPath(
-              clipper: WaveClipperTwo(),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFF2A5C5B),
-                ),
-                height: 80,
-              ),
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/backlogin1.png"),
+              fit: BoxFit.fill,
             ),
-            Container(
-              padding: EdgeInsets.only(top: 80, left: 32, right: 32, bottom: 32),
-              width: double.infinity,
-              child: Center(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+          ),
+          padding: EdgeInsets.only(top: 80, left: 32, right: 32, bottom: 32),
+          width: double.infinity,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                    child: Image.asset("assets/logoopenminer.png", height: 60,),
+                  ),
+                  SizedBox(
+                    height: 60,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image.asset("assets/logoopenminer.png", height: 80,),
-                      ),
+                      Text("Bem-vindo ao APP mais foda de todos", style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),),
                       SizedBox(
-                        height: 30,
+                        height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            "Cadastro",
-                            style:
-                            TextStyle(fontSize: 20, color: Colors.blueGrey),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 20),
-                        child: TextFormField(
-                          cursorColor: Colors.deepOrange,
-                          controller: _controllerNome,
-                          keyboardType: TextInputType.text,
-                          textInputAction: TextInputAction.next,
-                          focusNode: _nodeNome,
-                          decoration: InputDecoration(
-                            fillColor: Colors.white,
-                            filled: true,
-                            prefixIcon: Icon(
-                              Icons.account_circle,
-                              color: Colors.blue,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(color: Colors.white, width: 0),
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            labelText: "Usuário",
-                            labelStyle:
-                            TextStyle(fontSize: 20, color: Colors.blueGrey),
-                          ),
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Color(0xFF2A5C5B),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 20),
-                        child: TextFormField(
-                          cursorColor: Colors.deepOrange,
-                          controller: _controllerEmail,
-                          keyboardType: TextInputType.emailAddress,
-                          textInputAction: TextInputAction.next,
-                          autofocus: true,
-                          focusNode: _nodeEmail,
-                          onFieldSubmitted: (term) {
-                            FocusScope.of(context).requestFocus(_nodeNome);
-                          },
-                          decoration: InputDecoration(
-                            fillColor: Colors.white,
-                            filled: true,
-                            prefixIcon: Icon(
-                              Icons.email,
-                              color: Colors.blue,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(color: Colors.white, width: 0),
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            labelText: "E-mail",
-                            labelStyle:
-                            TextStyle(fontSize: 20, color: Colors.blueGrey),
-                          ),
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Color(0xFF2A5C5B),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 20),
-                        child: TextFormField(
-                          cursorColor: Colors.deepOrange,
-                          controller: _controllerSenha,
-                          keyboardType: TextInputType.text,
-                          obscureText: true,
-                          textInputAction: TextInputAction.done,
-                          focusNode: _nodeSenha,
-                          decoration: InputDecoration(
-                            fillColor: Colors.white,
-                            filled: true,
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: Colors.blue,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(color: Colors.white, width: 0),
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            labelText: "Senha",
-                            labelStyle:
-                            TextStyle(fontSize: 20, color: Colors.blueGrey),
-                          ),
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Color(0xFF2A5C5B),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: CheckboxListTile(
-                          title: Text(
-                              "Ao clicar em Cadastrar, você concorda com nossos Termos, Condições e Políticas de Dados"),
-                          value: _contrato,
-                          onChanged: (_contratonovo) {
-                            setState(() {
-                              _contrato = _contratonovo;
-                            });
-                          },
-                          controlAffinity: ListTileControlAffinity.leading,
-                        ),
-                      ),
-                      Container(
-                        height: 50,
-                        width: 200,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color(0xFF22B995),
-                        ),
-                        child: SizedBox.expand(
-                          child: FlatButton(
-                            onPressed: () {
-                              _validarCampos();
-                              return showDialog(
-                                  context: context,
-                                  barrierDismissible: true,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      title:
-                                      Text("Dados Cadastrados com Sucesso!"),
-                                      actions: <Widget>[
-                                        FlatButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text("OK"),
-                                        ),
-                                      ],
-                                    );
-                                  });
-                            },
-                            child: Text(
-                              "Cadastrar",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 15, bottom: 10),
-                        child: Center(
-                          child: Text(
-                            " - OU SE PREFERIR - ",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 60,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color(0xFFA0A4AB),
-                        ),
-                        child: SizedBox.expand(
-                          child: FlatButton(
-                            onPressed: () {
-                              _validarCampos();
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image(
-                                  image: AssetImage("assets/google_logo.png"),
-                                  height: 25,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Text(
-                                    "Entrar com o Google",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: Center(
-                          child: FlatButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text(
-                              "Tem uma conta? Entre aqui",
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.blueGrey),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        _mensagemErro,
-                        style: TextStyle(color: Colors.red, fontSize: 20),
-                      ),
+                      Text("Continuação da frase", style: TextStyle(fontSize: 16, color: Colors.white),),
                     ],
                   ),
-                ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: TextFormField(
+                      cursorColor: Colors.deepPurple,
+                      controller: _controllerNome,
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                      focusNode: _nodeNome,
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        prefixIcon: Icon(
+                          Icons.account_circle,
+                          color: Colors.deepPurple,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide:
+                          BorderSide(color: Colors.white, width: 0),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        labelText: "Nome",
+                        labelStyle:
+                        TextStyle(fontSize: 20, color: Colors.blueGrey),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xFF2A5C5B),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: TextFormField(
+                      cursorColor: Colors.deepPurple,
+                      controller: _controllerEmail,
+                      keyboardType: TextInputType.emailAddress,
+                      textInputAction: TextInputAction.next,
+                      focusNode: _nodeEmail,
+                      onFieldSubmitted: (term) {
+                        FocusScope.of(context).requestFocus(_nodeNome);
+                      },
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.deepPurple,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide:
+                          BorderSide(color: Colors.white, width: 0),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        labelText: "E-mail",
+                        labelStyle:
+                        TextStyle(fontSize: 20, color: Colors.black54),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xFF2A5C5B),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: TextFormField(
+                      cursorColor: Colors.deepPurple,
+                      controller: _controllerSenha,
+                      keyboardType: TextInputType.text,
+                      obscureText: true,
+                      textInputAction: TextInputAction.done,
+                      focusNode: _nodeSenha,
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        prefixIcon: Icon(
+                          Icons.lock,
+                          color: Colors.deepPurple,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide:
+                          BorderSide(color: Colors.white, width: 0),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        labelText: "Senha",
+                        labelStyle:
+                        TextStyle(fontSize: 20, color: Colors.blueGrey),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xFF2A5C5B),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 25),
+
+                    child: Theme(
+                      data: ThemeData(unselectedWidgetColor: Colors.white),
+                      child: CheckboxListTile(
+                        checkColor: Colors.white,
+                        activeColor: Colors.deepPurple,
+                        title: Text(
+                          "Aceite os Termos de uso e Politicas de privacidade", style: TextStyle(color: Colors.white, fontSize: 15),),
+                        value: _contrato,
+                        onChanged: (_contratonovo) {
+                          setState(() {
+                            _contrato = _contratonovo;
+                          });
+                        },
+                        controlAffinity: ListTileControlAffinity.leading,
+                      ),
+                    )
+                  ),
+                  Container(
+                    height: 45,
+                    width: 220,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    child: SizedBox.expand(
+                      child: FlatButton(
+                        onPressed: () {
+                          _validarCampos();
+                          return showDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title:
+                                  Text("Dados Cadastrados com Sucesso!"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text("OK"),
+                                    ),
+                                  ],
+                                );
+                              });
+                        },
+                        child: Text(
+                          "Criar conta",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black54,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 15, bottom: 10),
+                    child: Center(
+                      child: Text(
+                        " - OU SE PREFERIR - ",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 45,
+                    width: 220,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    child: SizedBox.expand(
+                      child: FlatButton(
+                        onPressed: () {
+                          _validarCampos();
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image(
+                              image: AssetImage("assets/google_logo.png"),
+                              height: 18,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Entrar com o Google",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Center(
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          "Tem uma conta? Entre aqui",
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    _mensagemErro,
+                    style: TextStyle(color: Colors.red, fontSize: 20),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

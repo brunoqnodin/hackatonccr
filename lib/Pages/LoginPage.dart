@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: EdgeInsets.fromLTRB(30, 25, 30, 0),
                   child: Padding(
                     padding: EdgeInsets.all(40),
-                    child: Image.asset("assets/logoopenminer.png"),
+                    child: Image.asset("assets/logoopenminer.png", height: 60),
                   ),
                 ),
                 SizedBox(
@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("Continuação da frase", style: TextStyle(fontSize: 16, color: Colors.white),)
+                    Text("Continuação da frase", style: TextStyle(fontSize: 16, color: Colors.white),),
                   ],
                 ),
                 SizedBox(
@@ -123,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 TextFormField(
+                  cursorColor: Colors.deepPurple,
                   controller: controllerEmail,
                   keyboardType: TextInputType.emailAddress,
                   style: TextStyle(
@@ -139,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                     labelText: "E-mail",
                     labelStyle: TextStyle(
                         fontSize: 20,
-                        color: Colors.blueGrey
+                        color: Colors.black54
                     ),
                   ),
                 ),
@@ -147,6 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
                 TextFormField(
+                  cursorColor: Colors.deepPurple,
                   controller: controllerSenha,
                   keyboardType: TextInputType.text,
                   obscureText: true,
@@ -164,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                     labelText: "Senha",
                     labelStyle: TextStyle(
                         fontSize: 20,
-                        color: Colors.blueGrey
+                        color: Colors.black54
                     ),
                   ),
                 ),
