@@ -335,7 +335,7 @@ class _DashboardState extends State<Dashboard> {
             height: 10,
           ),
           Padding(
-            padding: EdgeInsets.all(30),
+            padding: EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 10),
             child: Row(
               children: [
                 Text(
@@ -351,6 +351,205 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ],
             ),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 30),
+            alignment: Alignment.centerLeft,
+            child: Text("Veja as ultimas vagas que você aplicou", style: TextStyle(fontSize: 14, color: Color(0xFFFF5F5775))),
+          ),
+          Container(
+            padding: EdgeInsets.all(30),
+            width: double.infinity,
+            height: 350,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Container(
+                            color: Color(0XFFF5F5F5),
+                            width: 150,
+                            child: Image.asset("assets/image.png"),
+                          ),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Nome da ONG parceira",
+                                style: TextStyle(color: Color(0xFFFF5F5775)),
+                              )),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Para Ingressar no Mercado de Trabalho",
+                                style: TextStyle(
+                                    color: Color(0xFFFF5F5775),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                          LinearPercentIndicator(
+                            width: 150,
+                            lineHeight: 10,
+                            percent: 0.4,
+                            backgroundColor: Colors.grey,
+                            progressColor: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Container(
+                            color: Color(0XFFF5F5F5),
+                            width: 150,
+                            child: Image.asset("assets/image.png"),
+                          ),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Nome da ONG parceira",
+                                style: TextStyle(color: Color(0xFFFF5F5775)),
+                              )),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Para Ingressar no Mercado de Trabalho",
+                                style: TextStyle(
+                                    color: Color(0xFFFF5F5775),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                          LinearPercentIndicator(
+                            width: 150,
+                            lineHeight: 10,
+                            percent: 0.8,
+                            backgroundColor: Colors.grey,
+                            progressColor: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Container(
+                            color: Color(0XFFF5F5F5),
+                            width: 150,
+                            child: Image.asset("assets/image.png"),
+                          ),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Nome da ONG parceira",
+                                style: TextStyle(color: Color(0xFFFF5F5775)),
+                              )),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Para Ingressar no Mercado de Trabalho",
+                                style: TextStyle(
+                                    color: Color(0xFFFF5F5775),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                          LinearPercentIndicator(
+                            width: 150,
+                            lineHeight: 10,
+                            percent: 0.6,
+                            backgroundColor: Colors.grey,
+                            progressColor: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Container(
+                            color: Color(0XFFF5F5F5),
+                            width: 150,
+                            child: Image.asset("assets/image.png"),
+                          ),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Nome da ONG parceira",
+                                style: TextStyle(color: Color(0xFFFF5F5775)),
+                              )),
+                          Container(
+                              padding: EdgeInsets.only(top: 5),
+                              width: 150,
+                              child: Text(
+                                "Para Ingressar no Mercado de Trabalho",
+                                style: TextStyle(
+                                    color: Color(0xFFFF5F5775),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                          LinearPercentIndicator(
+                            width: 150,
+                            lineHeight: 10,
+                            percent: 0.1,
+                            backgroundColor: Colors.grey,
+                            progressColor: Colors.deepPurple,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "SEUS ",
+                  style: TextStyle(fontSize: 18, color: Color(0xFFFF5F5775)),
+                ),
+                Text(
+                  "PREFERIDOS",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Color(0xFFFF5F5775),
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(right: 30),
+            alignment: Alignment.centerRight,
+            child: Text("Veja as ultimas vagas que você aplicou", style: TextStyle(fontSize: 14, color: Color(0xFFFF5F5775))),
           ),
           Container(
             padding: EdgeInsets.all(30),
