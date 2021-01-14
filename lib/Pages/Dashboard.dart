@@ -292,7 +292,9 @@ class _DashboardState extends State<Dashboard> {
                           ),
                           child: SizedBox.expand(
                             child: FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, "/detalhecurso");
+                              },
                               child: Text(
                                 "Acessar",
                                 style: TextStyle(

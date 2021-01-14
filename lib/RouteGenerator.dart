@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prisma/Contas.dart';
+import 'package:prisma/Pages/DetalheCurso.dart';
 import 'package:prisma/Pages/Cadastro.dart';
 import 'package:prisma/Pages/Cadastro1.dart';
 import 'package:prisma/Pages/Contas1.dart';
@@ -37,6 +38,8 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => Proposta1());
       case "/proposta":
         return MaterialPageRoute(builder: (_) => Dashboard());
+      case "/detalhecurso":
+        return MaterialPageRoute(builder: (_) => DetalheCurso());
       case "/home":
         return MaterialPageRoute(builder: (_) => Home());
       case "/splash":
