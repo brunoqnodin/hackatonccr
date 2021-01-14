@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:prisma/Contas.dart';
+import 'package:prisma/Pages/Dashboard2.dart';
 import 'package:prisma/Pages/DetalheCurso.dart';
 import 'package:prisma/Pages/Cadastro.dart';
 import 'package:prisma/Pages/Cadastro1.dart';
-import 'package:prisma/Pages/Contas1.dart';
 import 'package:prisma/Pages/Dashboard.dart';
 import 'package:prisma/Pages/LoginPage.dart';
 import 'package:prisma/Pages/CadLogin.dart';
-import 'package:prisma/Pages/Proposta1.dart';
+import 'package:prisma/Pages/Perfil.dart';
 import 'package:prisma/Pages/ResetPassword.dart';
 import 'package:prisma/Pages/Home.dart';
 import 'package:prisma/Pages/Splash.dart';
@@ -32,11 +32,11 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => Cadastro1());
       case "/contas":
         return MaterialPageRoute(builder: (_) => Contas());
-      case "/contas1":
-        return MaterialPageRoute(builder: (_) => Contas1());
-      case "/proposta1":
-        return MaterialPageRoute(builder: (_) => Proposta1());
-      case "/proposta":
+      case "/dashboard2":
+        return MaterialPageRoute(builder: (_) => Dashboard2());
+      case "/perfil":
+        return MaterialPageRoute(builder: (_) => Perfil());
+      case "/dashboard":
         return MaterialPageRoute(builder: (_) => Dashboard());
       case "/detalhecurso":
         return MaterialPageRoute(builder: (_) => DetalheCurso());

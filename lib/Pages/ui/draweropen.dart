@@ -49,7 +49,11 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.asset("assets/logoopenminer.png"),
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.grey,
+                      backgroundImage: _urlImagemRecuperada != null ? NetworkImage("${_urlImagemRecuperada}") : null,
+                    ),
                     SizedBox(
                       height: 20,
                     ),
@@ -68,8 +72,10 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.grey,
-                onPressed: (){},
-                icon: Icon(Icons.account_circle),
+                onPressed: (){
+                  Navigator.pushNamed(context, "/dashboard2");
+                },
+                icon: Icon(Icons.dashboard),
                 label: Text("      Dashboard"),
               ),
             ),
@@ -84,10 +90,24 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.grey,
-                onPressed: (){
-                  Navigator.pushNamed(context, "/cadastro");
-                },
-                icon: Icon(Icons.account_balance),
+                onPressed: (){},
+                icon: Icon(Icons.navigation_outlined),
+                label: Text("      Trilhas de aprendizado"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child:  Divider(
+                color: Colors.grey,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 5),
+              alignment: Alignment.centerLeft,
+              child: FlatButton.icon(
+                textColor: Colors.grey,
+                onPressed: (){},
+                icon: Icon(Icons.emoji_objects_outlined),
                 label: Text("      Oportunidades"),
               ),
             ),
@@ -102,26 +122,10 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.grey,
-                onPressed: (){},
-                icon: Icon(Icons.directions_walk),
-                label: Text("      Minhas trilhas"),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child:  Divider(
-                color: Colors.grey,
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 5),
-              alignment: Alignment.centerLeft,
-              child: FlatButton.icon(
-                textColor: Colors.grey,
                 onPressed: (){
                 },
-                icon: Icon(Icons.business),
-                label: Text("      Empresas"),
+                icon: Icon(Icons.monetization_on_rounded),
+                label: Text("      Carteira"),
               ),
             ),Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
@@ -134,9 +138,11 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.grey,
-                onPressed: (){},
-                icon: Icon(Icons.wallet_giftcard),
-                label: Text("      Carteira"),
+                onPressed: (){
+                  Navigator.pushNamed(context, "/perfil");
+                },
+                icon: Icon(Icons.person),
+                label: Text("      Perfil"),
               ),
             ),
             Padding(
@@ -151,8 +157,8 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               child: FlatButton.icon(
                 textColor: Colors.grey,
                 onPressed: (){},
-                icon: Icon(Icons.share),
-                label: Text("      Convidar um amigo"),
+                icon: Icon(Icons.file_upload),
+                label: Text("      Evolução"),
               ),
             ),
             Padding(
