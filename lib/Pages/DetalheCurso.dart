@@ -112,7 +112,7 @@ class _DetalheCursoState extends State<DetalheCurso> {
                   starCount: 5,
                   allowHalfRating: false,
                   spacing: 2.0,
-                )
+                ),
               ],
             ),
             Padding(

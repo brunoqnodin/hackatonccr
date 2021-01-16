@@ -3,8 +3,8 @@ import 'package:prisma/Contas.dart';
 import 'package:prisma/Pages/Dashboard2.dart';
 import 'package:prisma/Pages/DetalheCurso.dart';
 import 'package:prisma/Pages/Cadastro.dart';
-import 'package:prisma/Pages/Cadastro1.dart';
 import 'package:prisma/Pages/Dashboard.dart';
+import 'package:prisma/Pages/Empresas.dart';
 import 'package:prisma/Pages/LoginPage.dart';
 import 'package:prisma/Pages/CadLogin.dart';
 import 'package:prisma/Pages/Perfil.dart';
@@ -28,8 +28,6 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => CadLogin());
       case "/reset":
         return MaterialPageRoute(builder: (_) => ResetPassword());
-      case "/cadastro1":
-        return MaterialPageRoute(builder: (_) => Cadastro1());
       case "/contas":
         return MaterialPageRoute(builder: (_) => Contas());
       case "/dashboard2":
@@ -40,6 +38,8 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => Dashboard());
       case "/detalhecurso":
         return MaterialPageRoute(builder: (_) => DetalheCurso());
+      case "/empresas":
+        return MaterialPageRoute(builder: (_) => Empresas());
       case "/home":
         return MaterialPageRoute(builder: (_) => Home());
       case "/splash":

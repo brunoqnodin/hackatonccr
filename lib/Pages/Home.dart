@@ -4,6 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:prisma/Contas.dart';
 import 'package:prisma/Pages/Cadastro.dart';
+import 'package:prisma/Pages/Empresas.dart';
 import 'package:prisma/Pages/Extratos.dart';
 import 'package:prisma/Pages/Dashboard.dart';
 import 'package:prisma/Pages/Perfil.dart';
@@ -63,7 +64,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     List<Widget> paginas = [
       Dashboard(),
-      Solicita(),
+      Empresas(),
       Extratos(),
       Perfil()
     ];
