@@ -13,8 +13,11 @@ class OpenBankingDrawer extends StatefulWidget {
 class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
 
 
-  String _idUsuarioLogado;
+  var _idUsuarioLogado;
   String _urlImagemRecuperada;
+  String _nomeUsuario;
+  String _emailUsuario;
+
   List<String> itensMenu = ["Perfil", "Sair"];
   _recuperarDadosUsuario()async{
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -24,6 +27,15 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
     FirebaseFirestore db = FirebaseFirestore.instance;
     DocumentSnapshot snapshot = await db.collection("usuarios").doc(_idUsuarioLogado).get();
 
+    Map<String, dynamic> dados = snapshot.data();
+
+    if(dados["urlImagem"] != null){
+      setState(() {
+        _urlImagemRecuperada = dados["urlImagem"];
+        _nomeUsuario = dados["nome"];
+        _emailUsuario = dados["email"];
+      });
+    }
   }
 
   _logoffUsuario()async{
@@ -50,9 +62,19 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircleAvatar(
-                      radius: 30,
+                      radius: 40,
                       backgroundColor: Colors.grey,
                       backgroundImage: _urlImagemRecuperada != null ? NetworkImage("${_urlImagemRecuperada}") : null,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "${_nomeUsuario.toString()}",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 20,
@@ -60,7 +82,7 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                   ],
                 ),
                 decoration: BoxDecoration(
-                  color: Color(0xFFF8F9FA),
+                  color: Color(0xFF5F5775),
                 ),
               ),
             ),
@@ -143,22 +165,6 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
                 },
                 icon: Icon(Icons.person),
                 label: Text("      Perfil"),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child:  Divider(
-                color: Colors.grey,
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 5),
-              alignment: Alignment.centerLeft,
-              child: FlatButton.icon(
-                textColor: Colors.grey,
-                onPressed: (){},
-                icon: Icon(Icons.file_upload),
-                label: Text("      Evolução"),
               ),
             ),
             Padding(

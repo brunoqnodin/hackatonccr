@@ -2,7 +2,7 @@
     package="br.com.prisma.prisma">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="prisma"
+        android:label="Difere aí"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

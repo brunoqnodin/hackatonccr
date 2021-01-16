@@ -52,6 +52,11 @@ dependencies:
   smooth_star_rating: ^1.1.1
   image_picker: ^0.6.7+21
 
+flutter_icons:
+  android: true
+  image_path_ios: "assets/icon.png"
+  image_path_android: "assets/icon.png"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,6 +87,8 @@ flutter:
     - assets/codebank.png
     - assets/iak9.png
     - assets/sw.png
+    - assets/openminer2.flr
+    - assets/icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

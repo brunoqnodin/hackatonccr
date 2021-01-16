@@ -94,11 +94,11 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text("Bem-vindo ao APP mais foda de todos", style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),),
+                    Text("SE DIFERENCIE", style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),),
                     SizedBox(
                       height: 10,
                     ),
-                    Text("Continuação da frase", style: TextStyle(fontSize: 16, color: Colors.white),),
+                    Text("adquira novas competências, habilidades e conquiste seu primeiro emprego", textAlign: TextAlign.center,style: TextStyle(fontSize: 16, color: Colors.white),),
                   ],
                 ),
                 SizedBox(
