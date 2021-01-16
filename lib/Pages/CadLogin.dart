@@ -99,7 +99,7 @@ class _CadLoginState extends State<CadLogin> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-                    child: Image.asset("assets/logoopenminer.png", height: 60,),
+                    child: Image.asset("assets/logo.png", height: 60,),
                   ),
                   SizedBox(
                     height: 60,

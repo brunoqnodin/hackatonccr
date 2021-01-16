@@ -6,6 +6,7 @@ import 'package:prisma/Contas.dart';
 import 'package:prisma/Pages/Cadastro.dart';
 import 'package:prisma/Pages/Extratos.dart';
 import 'package:prisma/Pages/Dashboard.dart';
+import 'package:prisma/Pages/Perfil.dart';
 import 'package:prisma/Pages/Solicita.dart';
 import 'package:prisma/Pages/ui/clipper.dart';
 import 'package:prisma/Pages/ui/draweropen.dart';
@@ -17,6 +18,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String _emailUsuario = "";
+  String nomeUsuario;
   int _indiceAtual = 0;
   String _idUsuarioLogado;
   String _urlImagemRecuperada;
@@ -30,10 +32,15 @@ class _HomeState extends State<Home> {
     FirebaseFirestore db = FirebaseFirestore.instance;
     DocumentSnapshot snapshot = await db.collection("usuarios").doc(_idUsuarioLogado).get();
 
-    setState(() {
-      _emailUsuario = usuarioLogado.email;
-    });
+    Map<String, dynamic> dados = snapshot.data();
+    if(dados["urlImagem"] != null){
+      setState(() {
+        _urlImagemRecuperada = dados["urlImagem"];
+        nomeUsuario = dados["nome"];
+      });
+    }
   }
+
 
   _escolhaMenuItem(String itemEscolhido){
     switch (itemEscolhido){
@@ -49,18 +56,22 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void initState(){
+    super.initState();
+    _recuperarDadosUsuario();
+  }
   Widget build(BuildContext context) {
     List<Widget> paginas = [
       Dashboard(),
       Solicita(),
       Extratos(),
-      Contas()
+      Perfil()
     ];
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        title: Image.asset("assets/logoopenminer2.png", height: 40,),
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Image.asset("assets/logo.png", height: 40,),
+        backgroundColor: Colors.black54,
         elevation: 15,
         centerTitle: true,
         actions: <Widget>[
@@ -108,7 +119,7 @@ class _HomeState extends State<Home> {
               icon: Icon(Icons.insert_chart)
           ),
           BottomNavigationBarItem(
-             label: "Carteira",
+             label: "Perfil",
               icon: Icon(Icons.account_circle)
           ),
         ],

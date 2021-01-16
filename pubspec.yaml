@@ -77,6 +77,11 @@ flutter:
     - assets/logoopenminer2.png
     - assets/google_logo.png
     - assets/image.png
+    - assets/logo.png
+    - assets/code4you.png
+    - assets/codebank.png
+    - assets/iak9.png
+    - assets/sw.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

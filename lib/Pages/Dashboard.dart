@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -7,7 +9,28 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  String _nomeUsuario;
+  var _idUsuarioLogado;
+
+  _recuperarDadosUsuario()async{
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User usuarioLogado = await auth.currentUser;
+    _idUsuarioLogado = usuarioLogado.uid;
+
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    DocumentSnapshot snapshot = await db.collection('usuarios').doc(_idUsuarioLogado).get();
+    Map<String, dynamic> dados = snapshot.data();
+    setState(() {
+      _nomeUsuario = dados["nome"];
+    });
+  }
+
+
   @override
+  void initState(){
+    super.initState();
+    _recuperarDadosUsuario();
+  }
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
@@ -17,7 +40,7 @@ class _DashboardState extends State<Dashboard> {
           Container(
             padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
-              color: Color(0xFFFFCF2D),
+              color: Color(0xFFFF5F5775),
             ),
             width: double.infinity,
             child: Column(
@@ -25,13 +48,13 @@ class _DashboardState extends State<Dashboard> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "SEJA BEM-VINDA",
-                  style: TextStyle(color: Color(0xFF5F5775), fontSize: 22),
+                  "SEJA BEM-VINDO(A)",
+                  style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
                 Text(
-                  "ANA LUÍZA",
+                    "${_nomeUsuario.toString()}",
                   style: TextStyle(
-                      color: Color(0xFF5F5775),
+                      color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
@@ -362,7 +385,7 @@ class _DashboardState extends State<Dashboard> {
           Container(
             padding: EdgeInsets.all(30),
             width: double.infinity,
-            height: 350,
+            height: 450,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
@@ -370,25 +393,30 @@ class _DashboardState extends State<Dashboard> {
                   child: Padding(
                     padding: EdgeInsets.all(5),
                     child: Card(
+
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 10,
+                          ),
                           Container(
                             color: Color(0XFFF5F5F5),
                             width: 150,
-                            child: Image.asset("assets/image.png"),
+                            height: 150,
+                            child: Image.asset("assets/code4you.png"),
                           ),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Nome da ONG parceira",
+                                "Code 4 You",
                                 style: TextStyle(color: Color(0xFFFF5F5775)),
                               )),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
+                                "Auxiliar Programador Front-End Vue.JS",
                                 style: TextStyle(
                                     color: Color(0xFFFF5F5775),
                                     fontSize: 16,
@@ -401,6 +429,29 @@ class _DashboardState extends State<Dashboard> {
                             backgroundColor: Colors.grey,
                             progressColor: Colors.deepPurple,
                           ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("Vagas"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("TI"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -412,23 +463,27 @@ class _DashboardState extends State<Dashboard> {
                     child: Card(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 10,
+                          ),
                           Container(
                             color: Color(0XFFF5F5F5),
                             width: 150,
-                            child: Image.asset("assets/image.png"),
+                            height: 150,
+                            child: Image.asset("assets/codebank.png"),
                           ),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Nome da ONG parceira",
+                                "CodeBank",
                                 style: TextStyle(color: Color(0xFFFF5F5775)),
                               )),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
+                                "Testes Automatizados em JEST",
                                 style: TextStyle(
                                     color: Color(0xFFFF5F5775),
                                     fontSize: 16,
@@ -441,6 +496,29 @@ class _DashboardState extends State<Dashboard> {
                             backgroundColor: Colors.grey,
                             progressColor: Colors.deepPurple,
                           ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("Vagas"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("TI"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -452,23 +530,26 @@ class _DashboardState extends State<Dashboard> {
                     child: Card(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 10,
+                          ),
                           Container(
                             color: Color(0XFFF5F5F5),
                             width: 150,
-                            child: Image.asset("assets/image.png"),
+                            child: Image.asset("assets/iak9.png"),
                           ),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Nome da ONG parceira",
+                                "IAK9 Tech",
                                 style: TextStyle(color: Color(0xFFFF5F5775)),
                               )),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
+                                "Ass. de programação básico HTML, CSS e Javascript",
                                 style: TextStyle(
                                     color: Color(0xFFFF5F5775),
                                     fontSize: 16,
@@ -481,6 +562,29 @@ class _DashboardState extends State<Dashboard> {
                             backgroundColor: Colors.grey,
                             progressColor: Colors.deepPurple,
                           ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("Vagas"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("TI"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -492,23 +596,27 @@ class _DashboardState extends State<Dashboard> {
                     child: Card(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 10,
+                          ),
                           Container(
                             color: Color(0XFFF5F5F5),
                             width: 150,
-                            child: Image.asset("assets/image.png"),
+                            height: 140,
+                            child: Image.asset("assets/sw.png"),
                           ),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Nome da ONG parceira",
+                                "Simple Ware",
                                 style: TextStyle(color: Color(0xFFFF5F5775)),
                               )),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
+                                "Assistente de desenvolvimento de softwares embarcados",
                                 style: TextStyle(
                                     color: Color(0xFFFF5F5775),
                                     fontSize: 16,
@@ -520,6 +628,29 @@ class _DashboardState extends State<Dashboard> {
                             percent: 0.1,
                             backgroundColor: Colors.grey,
                             progressColor: Colors.deepPurple,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("Vagas"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("TI"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

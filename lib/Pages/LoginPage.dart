@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: EdgeInsets.fromLTRB(30, 25, 30, 0),
                   child: Padding(
                     padding: EdgeInsets.all(40),
-                    child: Image.asset("assets/logoopenminer.png", height: 60),
+                    child: Image.asset("assets/logo.png", height: 60),
                   ),
                 ),
                 SizedBox(
