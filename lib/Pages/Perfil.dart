@@ -345,70 +345,74 @@ class _PerfilState extends State<Perfil> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Card(
-
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            color: Color(0XFFF5F5F5),
-                            width: 150,
-                            height: 150,
-                            child: Image.asset("assets/code4you.png"),
-                          ),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Code 4 You",
-                                style: TextStyle(color: Color(0xFFFF5F5775)),
-                              )),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Auxiliar Programador Front-End Vue.JS",
-                                style: TextStyle(
-                                    color: Color(0xFFFF5F5775),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          LinearPercentIndicator(
-                            width: 150,
-                            lineHeight: 10,
-                            percent: 0.4,
-                            backgroundColor: Colors.grey,
-                            progressColor: Colors.deepPurple,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                RaisedButton(
-                                  onPressed: (){},
-                                  child: Text("Vagas"),
-                                  textColor: Colors.white,
-                                  color: Colors.deepPurple,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                RaisedButton(
-                                  onPressed: (){},
-                                  child: Text("TI"),
-                                  textColor: Colors.white,
-                                  color: Colors.deepPurple,
-                                ),
-                              ],
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, "/empresas2");
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                        ],
+                            Container(
+                              color: Color(0XFFF5F5F5),
+                              width: 150,
+                              height: 150,
+                              child: Image.asset("assets/code4you.png"),
+                            ),
+                            Container(
+                                padding: EdgeInsets.only(top: 5),
+                                width: 150,
+                                child: Text(
+                                  "Code 4 You",
+                                  style: TextStyle(color: Color(0xFFFF5F5775)),
+                                )),
+                            Container(
+                                padding: EdgeInsets.only(top: 5),
+                                width: 150,
+                                child: Text(
+                                  "Auxiliar Programador Front-End Vue.JS",
+                                  style: TextStyle(
+                                      color: Color(0xFFFF5F5775),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                            LinearPercentIndicator(
+                              width: 150,
+                              lineHeight: 10,
+                              percent: 0.4,
+                              backgroundColor: Colors.grey,
+                              progressColor: Colors.deepPurple,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  RaisedButton(
+                                    onPressed: (){},
+                                    child: Text("Vagas"),
+                                    textColor: Colors.white,
+                                    color: Colors.deepPurple,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  RaisedButton(
+                                    onPressed: (){},
+                                    child: Text("TI"),
+                                    textColor: Colors.white,
+                                    color: Colors.deepPurple,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

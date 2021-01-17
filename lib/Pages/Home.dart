@@ -9,7 +9,7 @@ import 'package:prisma/Pages/Extratos.dart';
 import 'package:prisma/Pages/Dashboard.dart';
 import 'package:prisma/Pages/Perfil.dart';
 import 'package:prisma/Pages/Solicita.dart';
-import 'package:prisma/Pages/ui/TrilhaAprendizado.dart';
+import 'file:///C:/Users/bnobre/AndroidStudioProjects/prisma/lib/Pages/TrilhaAprendizado.dart';
 import 'package:prisma/Pages/ui/clipper.dart';
 import 'package:prisma/Pages/ui/draweropen.dart';
 

@@ -112,7 +112,9 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.grey,
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, "/trilhas2");
+                },
                 icon: Icon(Icons.navigation_outlined),
                 label: Text("      Trilhas de aprendizado"),
               ),
@@ -128,7 +130,9 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               alignment: Alignment.centerLeft,
               child: FlatButton.icon(
                 textColor: Colors.grey,
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, "/empresas2");
+                },
                 icon: Icon(Icons.emoji_objects_outlined),
                 label: Text("      Oportunidades"),
               ),
@@ -145,23 +149,7 @@ class _OpenBankingDrawerState extends State<OpenBankingDrawer> {
               child: FlatButton.icon(
                 textColor: Colors.grey,
                 onPressed: (){
-                },
-                icon: Icon(Icons.monetization_on_rounded),
-                label: Text("      Carteira"),
-              ),
-            ),Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child:  Divider(
-                color: Colors.grey,
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 5),
-              alignment: Alignment.centerLeft,
-              child: FlatButton.icon(
-                textColor: Colors.grey,
-                onPressed: (){
-                  Navigator.pushNamed(context, "/perfil");
+                  Navigator.pushNamed(context, "/perfil2");
                 },
                 icon: Icon(Icons.person),
                 label: Text("      Perfil"),

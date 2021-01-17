@@ -35,7 +35,7 @@ dependencies:
   firebase_core: ^0.5.3
   cloud_firestore: ^0.14.4
   flare_flutter: ^2.0.6
-  mask_text_input_formatter: ^1.1.0
+  mask_text_input_formatter: ^1.2.1
   http: ^0.12.0+4
   google_maps_flutter: ^0.5.28+1
   flutter_launcher_icons: ^0.8.1
@@ -51,6 +51,7 @@ dependencies:
   youtube_player_flutter: ^7.0.0+7
   smooth_star_rating: ^1.1.1
   image_picker: ^0.6.7+21
+
 
 flutter_icons:
   android: true

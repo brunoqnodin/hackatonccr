@@ -62,25 +62,35 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(1),
             decoration: BoxDecoration(color: Colors.grey),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  "Trilhas",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Color(0xFFFF5F5775),
-                      decoration: TextDecoration.underline),
+                FlatButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, "/trilhas2");
+                  },
+                  child: Text(
+                    "Trilhas",
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Color(0xFFFF5F5775),
+                        decoration: TextDecoration.underline),
+                  ),
                 ),
-                Text(
-                  "Vagas",
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Color(0xFFFF5F5775),
-                      decoration: TextDecoration.underline),
+                FlatButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, "/empresas2");
+                  },
+                  child: Text(
+                    "Vagas",
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Color(0xFFFF5F5775),
+                        decoration: TextDecoration.underline),
+                  ),
                 ),
                 Text(
                   "Preferidos",
@@ -219,120 +229,125 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(30),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      color: Color(0XFFF5F5F5),
-                      width: 150,
-                      child: Image.asset("assets/image.png"),
-                    ),
-                    Container(
-                        padding: EdgeInsets.only(top: 5),
-                        width: 150,
-                        child: Text(
-                          "Nome da ONG parceira",
-                          style: TextStyle(color: Color(0xFFFF5F5775)),
-                        )),
-                    Container(
-                        padding: EdgeInsets.only(top: 5),
-                        width: 150,
-                        child: Text(
-                          "Para Ingressar no Mercado de Trabalho",
-                          style: TextStyle(
-                              color: Color(0xFFFF5F5775),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                        )),
-                    LinearPercentIndicator(
-                      width: 150,
-                      lineHeight: 10,
-                      percent: 0.8,
-                      backgroundColor: Colors.grey,
-                      progressColor: Colors.deepPurple,
-                    ),
-                  ],
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  color: Color(0xFFFF5F5775),
-                  width: 200,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, "/detalhecurso");
+            },
+            child: Container(
+              padding: EdgeInsets.all(30),
+              child: Row(
+                children: [
+                  Column(
                     children: [
-                      Text(
-                        "COMO INGRESSAR NO MERCADO DE TRABALHO?",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                      Container(
+                        color: Color(0XFFF5F5F5),
+                        width: 150,
+                        child: Image.asset("assets/image.png"),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 15),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Data de inicio:",
-                              style: TextStyle(color: Colors.white70),
-                            ),
-                            Text(
-                              "17/01/2021",
-                              style: TextStyle(
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                      Container(
+                          padding: EdgeInsets.only(top: 5),
+                          width: 150,
+                          child: Text(
+                            "Conteudo",
+                            style: TextStyle(color: Color(0xFFFF5F5775)),
+                          )),
+                      Container(
+                          padding: EdgeInsets.only(top: 5),
+                          width: 150,
+                          child: Text(
+                            "Para Ingressar no Mercado de Trabalho",
+                            style: TextStyle(
+                                color: Color(0xFFFF5F5775),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          )),
+                      LinearPercentIndicator(
+                        width: 150,
+                        lineHeight: 10,
+                        percent: 0.8,
+                        backgroundColor: Colors.grey,
+                        progressColor: Colors.deepPurple,
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    color: Color(0xFFFF5F5775),
+                    width: 200,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "COMO INGRESSAR NO MERCADO DE TRABALHO?",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 5),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Data de términio:",
-                              style: TextStyle(color: Colors.white70),
-                            ),
-                            Text(
-                              "10 dias",
-                              style: TextStyle(
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 15, bottom: 10),
-                        child: Container(
-                          height: 35,
-                          width: 220,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white70,
-                          ),
-                          child: SizedBox.expand(
-                            child: FlatButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, "/detalhecurso");
-                              },
-                              child: Text(
-                                "Acessar",
+                        Padding(
+                          padding: EdgeInsets.only(top: 15),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Data de inicio:",
+                                style: TextStyle(color: Colors.white70),
+                              ),
+                              Text(
+                                "17/01/2021",
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black54,
+                                    color: Colors.white70,
                                     fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 5),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Data de términio:",
+                                style: TextStyle(color: Colors.white70),
+                              ),
+                              Text(
+                                "10 dias",
+                                style: TextStyle(
+                                    color: Colors.white70,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 15, bottom: 10),
+                          child: Container(
+                            height: 35,
+                            width: 220,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.white70,
+                            ),
+                            child: SizedBox.expand(
+                              child: FlatButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "/detalhecurso");
+                                },
+                                child: Text(
+                                  "Acessar",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black54,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Container(
@@ -345,7 +360,9 @@ class _DashboardState extends State<Dashboard> {
             ),
             child: SizedBox.expand(
               child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "/trilhas2");
+                },
                 child: Text(
                   "Ver todas",
                   style: TextStyle(
@@ -389,70 +406,74 @@ class _DashboardState extends State<Dashboard> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Card(
-
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            color: Color(0XFFF5F5F5),
-                            width: 150,
-                            height: 150,
-                            child: Image.asset("assets/code4you.png"),
-                          ),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Code 4 You",
-                                style: TextStyle(color: Color(0xFFFF5F5775)),
-                              )),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Auxiliar Programador Front-End Vue.JS",
-                                style: TextStyle(
-                                    color: Color(0xFFFF5F5775),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          LinearPercentIndicator(
-                            width: 150,
-                            lineHeight: 10,
-                            percent: 0.4,
-                            backgroundColor: Colors.grey,
-                            progressColor: Colors.deepPurple,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                RaisedButton(
-                                  onPressed: (){},
-                                  child: Text("Vagas"),
-                                  textColor: Colors.white,
-                                  color: Colors.deepPurple,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                RaisedButton(
-                                  onPressed: (){},
-                                  child: Text("TI"),
-                                  textColor: Colors.white,
-                                  color: Colors.deepPurple,
-                                ),
-                              ],
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, "/empresas2");
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                        ],
+                            Container(
+                              color: Color(0XFFF5F5F5),
+                              width: 150,
+                              height: 150,
+                              child: Image.asset("assets/code4you.png"),
+                            ),
+                            Container(
+                                padding: EdgeInsets.only(top: 5),
+                                width: 150,
+                                child: Text(
+                                  "Code 4 You",
+                                  style: TextStyle(color: Color(0xFFFF5F5775)),
+                                )),
+                            Container(
+                                padding: EdgeInsets.only(top: 5),
+                                width: 150,
+                                child: Text(
+                                  "Auxiliar Programador Front-End Vue.JS",
+                                  style: TextStyle(
+                                      color: Color(0xFFFF5F5775),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                            LinearPercentIndicator(
+                              width: 150,
+                              lineHeight: 10,
+                              percent: 0.4,
+                              backgroundColor: Colors.grey,
+                              progressColor: Colors.deepPurple,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  RaisedButton(
+                                    onPressed: (){},
+                                    child: Text("Vagas"),
+                                    textColor: Colors.white,
+                                    color: Colors.deepPurple,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  RaisedButton(
+                                    onPressed: (){},
+                                    child: Text("TI"),
+                                    textColor: Colors.white,
+                                    color: Colors.deepPurple,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -666,11 +687,11 @@ class _DashboardState extends State<Dashboard> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "SEUS ",
+                  "SUAS ",
                   style: TextStyle(fontSize: 18, color: Color(0xFFFF5F5775)),
                 ),
                 Text(
-                  "PREFERIDOS",
+                  "TRILHAS",
                   style: TextStyle(
                       fontSize: 20,
                       color: Color(0xFFFF5F5775),
@@ -687,46 +708,75 @@ class _DashboardState extends State<Dashboard> {
           Container(
             padding: EdgeInsets.all(30),
             width: double.infinity,
-            height: 350,
+            height: 380,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Container(
-                            color: Color(0XFFF5F5F5),
-                            width: 150,
-                            child: Image.asset("assets/image.png"),
-                          ),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, "/empresas2");
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            Container(
+                              color: Color(0XFFF5F5F5),
                               width: 150,
-                              child: Text(
-                                "Nome da ONG parceira",
-                                style: TextStyle(color: Color(0xFFFF5F5775)),
-                              )),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
+                              height: 170,
+                              child: Image.asset("assets/code4you.png"),
+                            ),
+                            Container(
+                                padding: EdgeInsets.only(top: 5),
+                                width: 150,
+                                child: Text(
+                                  "Trilha Code4You",
+                                  style: TextStyle(color: Color(0xFFFF5F5775)),
+                                )),
+                            Container(
+                                padding: EdgeInsets.only(top: 5),
+                                width: 150,
+                                child: Text(
+                                  "Vue-JS",
+                                  style: TextStyle(
+                                      color: Color(0xFFFF5F5775),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                            LinearPercentIndicator(
                               width: 150,
-                              child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
-                                style: TextStyle(
-                                    color: Color(0xFFFF5F5775),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          LinearPercentIndicator(
-                            width: 150,
-                            lineHeight: 10,
-                            percent: 0.4,
-                            backgroundColor: Colors.grey,
-                            progressColor: Colors.deepPurple,
-                          ),
-                        ],
+                              lineHeight: 10,
+                              percent: 0.4,
+                              backgroundColor: Colors.grey,
+                              progressColor: Colors.deepPurple,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  RaisedButton(
+                                    onPressed: (){},
+                                    child: Text("Vagas"),
+                                    textColor: Colors.white,
+                                    color: Colors.deepPurple,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  RaisedButton(
+                                    onPressed: (){},
+                                    child: Text("TI"),
+                                    textColor: Colors.white,
+                                    color: Colors.deepPurple,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -746,14 +796,14 @@ class _DashboardState extends State<Dashboard> {
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Nome da ONG parceira",
+                                "Trilha Codebank",
                                 style: TextStyle(color: Color(0xFFFF5F5775)),
                               )),
                           Container(
                               padding: EdgeInsets.only(top: 5),
                               width: 150,
                               child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
+                                "Testes com JEST",
                                 style: TextStyle(
                                     color: Color(0xFFFF5F5775),
                                     fontSize: 16,
@@ -766,85 +816,28 @@ class _DashboardState extends State<Dashboard> {
                             backgroundColor: Colors.grey,
                             progressColor: Colors.deepPurple,
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Container(
-                            color: Color(0XFFF5F5F5),
-                            width: 150,
-                            child: Image.asset("assets/image.png"),
-                          ),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Nome da ONG parceira",
-                                style: TextStyle(color: Color(0xFFFF5F5775)),
-                              )),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
-                                style: TextStyle(
-                                    color: Color(0xFFFF5F5775),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          LinearPercentIndicator(
-                            width: 150,
-                            lineHeight: 10,
-                            percent: 0.6,
-                            backgroundColor: Colors.grey,
-                            progressColor: Colors.deepPurple,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Container(
-                            color: Color(0XFFF5F5F5),
-                            width: 150,
-                            child: Image.asset("assets/image.png"),
-                          ),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Nome da ONG parceira",
-                                style: TextStyle(color: Color(0xFFFF5F5775)),
-                              )),
-                          Container(
-                              padding: EdgeInsets.only(top: 5),
-                              width: 150,
-                              child: Text(
-                                "Para Ingressar no Mercado de Trabalho",
-                                style: TextStyle(
-                                    color: Color(0xFFFF5F5775),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                          LinearPercentIndicator(
-                            width: 150,
-                            lineHeight: 10,
-                            percent: 0.1,
-                            backgroundColor: Colors.grey,
-                            progressColor: Colors.deepPurple,
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("Vagas"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                RaisedButton(
+                                  onPressed: (){},
+                                  child: Text("TI"),
+                                  textColor: Colors.white,
+                                  color: Colors.deepPurple,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
