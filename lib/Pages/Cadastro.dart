@@ -12,7 +12,7 @@ class _CadastroState extends State<Cadastro> {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          "assets/logoopenminer2.png",
+          "assets/1logoopenminer2.png",
           height: 40,
         ),
         centerTitle: true,

@@ -11,7 +11,7 @@ class _RelatoriosState extends State<Relatorios> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/logoopenminer2.png", height: 40,),
+        title: Image.asset("assets/1logoopenminer2.png", height: 40,),
         centerTitle: true,
         backgroundColor: Color(0xFF2A5C5B),
         elevation: 0,

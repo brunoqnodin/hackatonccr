@@ -79,8 +79,6 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/backlogin1.png
-    - assets/logoopenminer.png
-    - assets/logoopenminer2.png
     - assets/google_logo.png
     - assets/image.png
     - assets/logo.png
@@ -88,7 +86,6 @@ flutter:
     - assets/codebank.png
     - assets/iak9.png
     - assets/sw.png
-    - assets/openminer2.flr
     - assets/difere.flr
     - assets/icon.png
     - assets/image2.png
