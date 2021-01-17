@@ -373,6 +373,210 @@ entrevistas''', style: TextStyle(fontSize: 18, color: Colors.black54),),
               ],
             ),
           ),
+          Padding(
+            padding: EdgeInsets.all(30),
+            child: Row(
+              children: [
+                Text(
+                  "TRILHA DE ",
+                  style: TextStyle(fontSize: 18, color: Color(0xFFFF5F5775)),
+                ),
+                Text(
+                  "CONHECIMENTO",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Color(0xFFFF5F5775),
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            width: 350,
+            decoration: BoxDecoration(
+              color: Color(0xFF979797),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      '''TRILHA PARA A VAGA DE AUXILIAR
+DE PROGRAMADOR FRONT-END
+COM VUE.JS E FOCO EM TESTES
+AUTOMATIZADOS EM JEST''',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Data de inicio:",
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                          Text(
+                            "17/01/2021",
+                            style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Data de términio:",
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                          Text(
+                            "10 dias",
+                            style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Image.asset("assets/image2.png"),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(30),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.green,),
+                    Text("1 | Primeiros passos", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black54),),
+                    Text("100% Completado", style: TextStyle(fontSize: 10),),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.green,),
+                    Text("Documentação do VUE.JS", style: TextStyle(fontSize: 18, color: Colors.black54),),
+                    SizedBox(
+                      width: 32,
+                    ),
+                    LinearPercentIndicator(
+                      width: 80,
+                      lineHeight: 10,
+                      percent: 1.0,
+                      backgroundColor: Colors.grey,
+                      progressColor: Colors.deepPurple,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.green,),
+                    Text("Documentação do JEST", style: TextStyle(fontSize: 18, color: Colors.black54),),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    LinearPercentIndicator(
+                      width: 80,
+                      lineHeight: 10,
+                      percent: 0.5,
+                      backgroundColor: Colors.grey,
+                      progressColor: Colors.deepPurple,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(30),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.amber,),
+                    Text("2 | Conceitos basicos", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black54),),
+                    Text("50% Completado", style: TextStyle(fontSize: 10),),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.green,),
+                    Text("Curso de VUE.JS basico", style: TextStyle(fontSize: 18, color: Colors.black54),),
+                    SizedBox(
+                      width: 52,
+                    ),
+                    LinearPercentIndicator(
+                      width: 80,
+                      lineHeight: 10,
+                      percent: 1.0,
+                      backgroundColor: Colors.grey,
+                      progressColor: Colors.deepPurple,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check_circle, color: Colors.grey,),
+                    Text("Curso de JEST basico", style: TextStyle(fontSize: 18, color: Colors.black54),),
+                    SizedBox(
+                      width: 70,
+                    ),
+                    LinearPercentIndicator(
+                      width: 80,
+                      lineHeight: 10,
+                      percent: 0.0,
+                      backgroundColor: Colors.grey,
+                      progressColor: Colors.deepPurple,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
