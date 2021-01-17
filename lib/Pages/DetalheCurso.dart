@@ -13,7 +13,7 @@ class _DetalheCursoState extends State<DetalheCurso> {
   var rating = 3.0;
   @override
   YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'tW3I0XYJyE0',
+    initialVideoId: '_I6MDBsuHhg',
     flags: YoutubePlayerFlags(
       mute: false,
       autoPlay: false,
@@ -88,7 +88,7 @@ class _DetalheCursoState extends State<DetalheCurso> {
             Padding(
               padding: EdgeInsets.only(left: 30, right: 30, bottom: 30),
               child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+                "Você já completou 30% do curso",
                 style: TextStyle(color: Color(0xFF5F5775)),
               ),
             ),

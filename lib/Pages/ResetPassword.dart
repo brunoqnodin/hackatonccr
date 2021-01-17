@@ -20,26 +20,24 @@ class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Resetar Senha", style: TextStyle(color: Color(0xFF20232D)),),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black38,
-          onPressed: (){
-            Navigator.pop(context, false);
-          },
-        ),
-        backgroundColor: Color(0xFFEE7700),
-      ),
       body: Container(
           padding: EdgeInsets.all(32),
           width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/backlogin1.png"),
+              fit: BoxFit.fill,
+            ),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
+                SizedBox(
+                  height: 30,
+                ),
                 Padding(
                   padding: EdgeInsets.all(20),
-                  child: Image.asset("images/password.png"),
+                  child: Image.asset("assets/logo.png"),
                 ),
                 SizedBox(
                   height: 30,
@@ -49,7 +47,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   child: Text(
                     "Esqueceu sua senha?",
                     style: TextStyle(
-                        color: Color(0xFFEE7700),
+                        color: Colors.white,
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Big Shoulders Display"
@@ -57,14 +55,14 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 Container(
                   alignment: Alignment.center,
                   child: Text(
                     "Por favor, informe o e-mail associado a sua conta que enviaremos um link para o mesmo com as instruções para restauração de sua senha.",
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: Colors.white70,
                         fontFamily: "Big Shoulders Display"
@@ -72,65 +70,56 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top:10, bottom: 20),
+                  padding: EdgeInsets.only(top:50, bottom: 50),
                   child: TextFormField(
-                    style: TextStyle(
-                      color: Colors.deepOrange,
-                    ),
-                    keyboardType: TextInputType.emailAddress,
+                    cursorColor: Colors.deepPurple,
                     controller: _controllerEmail,
+                    keyboardType: TextInputType.emailAddress,
+                    style: TextStyle(
+                      color: Colors.blueGrey,
+                    ),
                     decoration: InputDecoration(
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0xFFEE7700),
-                        ),
-                      ),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0xFFEE7700),
-                          width: 2.0,
-                        ),
+                      fillColor: Colors.white,
+                      filled: true,
+                      prefixIcon: Icon(Icons.account_circle, color: Colors.deepPurple,),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white, width: 0),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                       labelText: "E-mail",
                       labelStyle: TextStyle(
-                          fontSize: 18,
-                          fontFamily: "Big Shoulders Display",
-                        color: Color(0xFFEE7700)
+                          fontSize: 20,
+                          color: Colors.black54
                       ),
                     ),
                   ),
                 ),
                 Container(
-                  height: 60,
+                  height: 45,
+                  width: 220,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      stops: [0.3, 1],
-                      colors: [
-                        Colors.deepOrange,
-                        Colors.orange
-                      ],
-                    ),
+                    color: Colors.white,
                   ),
                   child: SizedBox.expand(
                     child: FlatButton(
-                      onPressed: (){
+                      onPressed: () {
                         resetPassword(_controllerEmail.text);
+                        Navigator.pop(context);
                       },
                       child: Text(
                         "Enviar",
                         style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                            fontFamily: "Big Shoulders Display",
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontSize: 18,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 250,
                 ),
               ],
             ),

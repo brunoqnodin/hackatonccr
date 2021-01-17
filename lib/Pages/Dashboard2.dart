@@ -12,12 +12,12 @@ class _Dashboard2State extends State<Dashboard2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: Colors.white),
         title: Image.asset(
-          "assets/logoopenminer2.png",
+          "assets/logo.png",
           height: 40,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black54,
         elevation: 15,
         centerTitle: true,
       ),

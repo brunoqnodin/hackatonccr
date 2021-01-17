@@ -21,7 +21,7 @@ class _SplashState extends State<Splash> {
           loaderColor: Colors.transparent,
         ),
         FlareActor(
-          "assets/openminer2.flr",
+          "assets/difere.flr",
           shouldClip: false,
           alignment: Alignment.bottomCenter,
           fit: BoxFit.cover,

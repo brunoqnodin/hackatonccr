@@ -11,6 +11,7 @@ import 'package:prisma/Pages/Perfil.dart';
 import 'package:prisma/Pages/ResetPassword.dart';
 import 'package:prisma/Pages/Home.dart';
 import 'package:prisma/Pages/Splash.dart';
+import 'package:prisma/Pages/ui/TrilhaAprendizado.dart';
 
 class RouteGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings){
@@ -34,6 +35,8 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => Dashboard2());
       case "/perfil":
         return MaterialPageRoute(builder: (_) => Perfil());
+      case "/trilhaaprendizado":
+        return MaterialPageRoute(builder: (_) => TrilhaAprendizado());
       case "/dashboard":
         return MaterialPageRoute(builder: (_) => Dashboard());
       case "/detalhecurso":

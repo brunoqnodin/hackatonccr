@@ -198,6 +198,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 FlatButton(
                   onPressed: () {
+                    Navigator.pushNamed(context, "/reset");
                   },
                   child: Text(
                     "Esqueci minha senha",

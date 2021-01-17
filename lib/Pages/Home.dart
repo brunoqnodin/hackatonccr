@@ -9,6 +9,7 @@ import 'package:prisma/Pages/Extratos.dart';
 import 'package:prisma/Pages/Dashboard.dart';
 import 'package:prisma/Pages/Perfil.dart';
 import 'package:prisma/Pages/Solicita.dart';
+import 'package:prisma/Pages/ui/TrilhaAprendizado.dart';
 import 'package:prisma/Pages/ui/clipper.dart';
 import 'package:prisma/Pages/ui/draweropen.dart';
 
@@ -65,7 +66,7 @@ class _HomeState extends State<Home> {
     List<Widget> paginas = [
       Dashboard(),
       Empresas(),
-      Extratos(),
+      TrilhaAprendizado(),
       Perfil()
     ];
     return Scaffold(
